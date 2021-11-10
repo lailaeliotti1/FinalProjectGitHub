@@ -1,25 +1,20 @@
-# This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 from playsound import playsound
-from functions import genre, hip_hop, r_n_b, music_pop, toggle_jukebox, jukebox, playlist_sources
-#from gtts import gTTS
-import os
+from jukebox import genre, toggle_jukebox, magic_jukebox, playlist_sources
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+
+def main():
     playsound('opening.mp3')
     print("Welcome to Laila's Magic Jukebox! Let's find you some new music that you might be interested in.")
+    user_name = input("What is your name?")
     user_genre = input("What's your favorite genre? Enter either Hip-Hop, R&B, Pop, or Country.")
     print(genre(user_genre))
-    new_playlist = {}
+    new_playlist = set()
     new_playlist = toggle_jukebox(user_genre)
+    magic_jukebox(new_playlist, user_name)
     playlist_sources(new_playlist)
 
-    # song_file = 'hip-hop/cele.mp3'
-    # print(os.path.abspath(song_file))
-    # print(os.listdir(PycharmProjects/MyProject))
-    # playsound(song_file)
+if __name__ == '__main__':
+    main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
