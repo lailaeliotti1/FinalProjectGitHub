@@ -1,3 +1,5 @@
+ # JUKEBOX
+ 
  This is Laila's Magic Jukebox program! This program will take in the user's favorite genre out of the four choices and
 return a list of songs as they are currently playing. The user also has the option to choose how long the playlist will 
  be.
